@@ -6,7 +6,7 @@ public class Main {
 		int n;
 		n = 3;
 		try{
-			System.out.print("请输入一个整数：");
+			System.out.print("Input a Integer:");
 			  BufferedReader strin=new BufferedReader(new InputStreamReader(System.in));
 			  n=Integer.parseInt(strin.readLine());
 		}catch(Exception e){
