@@ -156,25 +156,29 @@ public class EvenNumber {
 			int m = (n-2)/4-1;
 			int temp;
 			for(int i=0;i<n/2;i++){
-				if(i==m+1){
-					temp = A[i][i];
-					A[i][i] = A[n/2+i][i];
-					A[n/2+i][i] = temp;
-				}else{
-					temp = A[i][m];
-					A[i][m] = A[n/2+i][m];
-					A[n/2+i][m] = temp;
+				for(int j = 0;j<m;j++){
+					if(i==m+1){
+						temp = A[i][j+1];
+						A[i][j+1] = A[n/2+i][j+1];
+						A[n/2+i][j+1] = temp;
+					}else{
+						temp = A[i][j];
+						A[i][j] = A[n/2+i][j];
+						A[n/2+i][j] = temp;
+					}
 				}
 			}
 			if(m>0){
 				m--;
 				for(int i=0;i<n/2;i++){
-					temp = A[i][n-1-m];
-					A[i][n-1-m] = A[n/2+i][n-1-m];
-					A[n/2+i][n-1-m] = temp;					 
+					for(int j=0;j<m-1;j++){
+						temp = A[i][n-1-m-j];
+						A[i][n-1-m-j] = A[n/2+i][n-1-m-j];
+						A[n/2+i][n-1-m-j] = temp;		
+					}
 				}
 			}
-			
+
 			//Output
 			for (x = 0; x < n; x++) {
 				for (y = 0; y < n; y++) {
