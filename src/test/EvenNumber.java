@@ -168,13 +168,12 @@ public class EvenNumber {
 					}
 				}
 			}
-			if(m>0){
-				m--;
+			if(m>0){				
 				for(int i=0;i<n/2;i++){
-					for(int j=0;j<m-1;j++){
-						temp = A[i][n-1-m-j];
-						A[i][n-1-m-j] = A[n/2+i][n-1-m-j];
-						A[n/2+i][n-1-m-j] = temp;		
+					for(int j=0;j<m;j++){
+						temp = A[i][n-1-j];
+						A[i][n-1-j] = A[n/2+i][n-1-j];
+						A[n/2+i][n-1-j] = temp;		
 					}
 				}
 			}
